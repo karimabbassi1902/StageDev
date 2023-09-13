@@ -1,0 +1,19 @@
+.hover-row:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .info-row {
+    background-color: rgba(236, 200, 39, 0.322);
+    display: none;
+  }
+  
+  .info-row td {
+    padding: 5px;
+  }
+  
+  .hover-row:hover + .info-row,
+  .info-row:hover {
+    display: table-row;
+  }
+  

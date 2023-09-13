@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"> Emploi/ Stage</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                Titre
+                            </th>
+                            <th>
+                                TypeOffre
+                            </th>
+                            <th>
+                                Entreprise
+                            </th>
+                            <th>
+                                descriptif
+                            </th>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let item of offres; let i = index" >
+                                <tr style="cursor: pointer;" (mouseenter)="showInfo[i] = true"
+                                    (mouseleave)="showInfo[i] = false" class="hover-row" (click)="onRowClick(i)">
+                                    <td>
+                                        {{ item.Titre }}
+                                    </td>
+                                    <td>
+                                        {{item.TypeOffre}}
+                                    </td>
+                                    <td>
+                                        {{item.Entreprise}}
+                                    </td>
+                                    <td>
+                                        {{item.descriptif}}
+                                    </td>
+                                </tr>
+                                <tr *ngIf="showInfo[i]" class="info-row">
+                                    <td colspan="4">Plus de détail sur l'offre {{ item.Titre }}</td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<router-outlet></router-outlet>

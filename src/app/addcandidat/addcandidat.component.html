@@ -1,0 +1,77 @@
+<div class="col-md-8">
+    <div class="card card-user">
+<!--         <div class="card-header">
+            <h5 class="card-title">Nouveau Offre</h5>
+        </div> -->
+        <div class="card-body">
+            <form [formGroup]="CandidateForm" (ngSubmit)="onSubmit()" >
+                <div class="row">
+                    <div class="col-md-5 pr-1">
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" formControlName="lastname" class="form-control" placeholder="" value="" >
+                        </div>
+                    </div>
+                    <div class="col-md-5 pr-1">
+                        <div class="form-group">
+                            <label>Prenom</label>
+                            <input type="text" formControlName="firstname" class="form-control" placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Statut</label>
+                            <select id="Statut" formControlName="statut" name="Statut" class="form-control">
+                                <option value="Etudiant">Etudiant</option>
+                                <option value="Diplomé">Diplomé</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email PRO</label>
+                            <input type="email" formControlName="email" class="form-control" placeholder="Email" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label>Chargez votre CV (PDF)    </label>
+                            <input type="file" (change)="onFileSelected($event)" name="CV" accept="application/pdf"  >
+                            <button type="button" class="btn btn-info"  (click)="uploadFile()"> <i class="nc-icon nc-cloud-upload-94"></i> Upload</button>
+                            <p *ngIf="this.cvfileName"  class="text-primary">{{this.cvfileName}}</p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-9 pr-3">
+                        <div class="form-group">
+                            <label>Chargez votre Lettre De Motivation  (PDF)   </label>
+                            <input type="file" (change)="onFileSelected($event)"  name="motivation" accept="application/pdf">
+                            <button type="button" class="btn btn-info"  (click)="uploadFile()"> <i class="nc-icon nc-cloud-upload-94"></i> Upload</button>
+                            <p *ngIf="this.motfilename" class="text-primary">{{this.motfilename}}</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Ajoutez Quelques Mots à votre Candidature</label>
+                            <textarea formControlName="description" class="form-control textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                        <div class="row">
+                            <div class="update ml-auto mr-auto">
+                                <button type="submit" class="btn btn-primary btn-round" >Enregistrer</button>
+                            </div>
+                        </div>
+            </form>
+        </div>
+    </div>
+</div>

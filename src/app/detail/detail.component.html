@@ -1,0 +1,221 @@
+
+<div class="row" *ngIf="this.receivedData">
+    
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-5 col-md-4">
+                <div class="icon-big text-center icon-warning">
+                    <i class="nc-icon nc-user-run text-danger" ></i>
+                    
+                </div>
+              </div>
+              <div class="col-7 col-md-8">
+                <div class="numbers">
+                  <p class="card-category">Nombre des Candidats</p>
+                  <p class="card-title">6
+                    <p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer ">
+            <hr>
+            <div class="stats">
+              <i class="fa fa-refresh"></i> Last update NOW
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="update ml-auto">
+        <button type="button" class="btn btn-primary btn-round" (click)="OpenApplicationForm()">Poser votre candidature</button>
+    </div>
+    <div class="col-md-12">
+      <div class="card">
+        
+        <div class="card-header">
+            <div class="alert alert-primary">
+                <h2> {{this.receivedData.Titre}}</h2>
+              </div>
+          <p class="category">Created By ESPRIT -  {{this.receivedData.datePUB}}</p>
+        </div>
+        
+
+
+
+        <div class="card-body">
+          <div class="typography-line">
+            <h5>
+              <span>Entreprise</span>{{this.receivedData.Entreprise}} </h5>
+          </div>
+          <div class="typography-line">
+            <span>Description</span>
+            <blockquote>
+              <p class="blockquote blockquote-footer">
+                " {{this.receivedData.descriptif}}"
+                <br>
+                <br>
+                <small>
+                  - {{this.receivedData.Entreprise}} - 
+                </small>
+              </p>
+            </blockquote>
+          </div>
+  
+
+          <div class="typography-line" *ngIf="this.receivedData.Responsabilites">
+            <blockquote class="blockquote">
+
+            <span>Responsabilités</span>
+            <p class="text-muted" *ngFor="let resp of this.receivedData.Responsabilites">
+                <li>{{resp}}</li>
+            </p>
+        </blockquote>
+
+          </div>
+          <div class="typography-line" *ngIf="this.receivedData.Qualifications">
+            <blockquote class="blockquote">
+
+            <span>Qualifications</span>
+            <p class="text-muted" *ngFor="let resp of this.receivedData.Qualifications">
+                <li>{{resp}}</li>
+            </p>
+        </blockquote>
+
+          </div>
+          <div class="typography-line" *ngIf="this.receivedData.NbreExperience">
+            <span>Nombre d'année d'experience</span>
+            <p class="text-muted">
+                {{this.receivedData.NbreExperience}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Candidats</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled team-members">
+            <li>
+              <div class="row">
+                <div class="col-md-2 col-2">
+                  <div class="avatar">
+                    <img src="assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                  </div>
+                </div>
+                <div class="col-md-7 col-7">
+                  Khalil Mghirbi
+                  <br />
+                </div>
+                <div class="col-md-3 col-3 text-right">
+                  <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="row">
+                <div class="col-md-2 col-2">
+                  <div class="avatar">
+                    <img src="assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                  </div>
+                </div>
+                <div class="col-md-7 col-7">
+                    Cristine Luois
+                </div>
+                <div class="col-md-3 col-3 text-right">
+                  <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="row">
+                <div class="col-md-2 col-2">
+                  <div class="avatar">
+                    <img src="assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                  </div>
+                </div>
+                <div class="col-ms-7 col-7">
+                 Oussema
+                  
+                </div>
+                <div class="col-md-3 col-3 text-right">
+                  <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>
+                </div>
+              </div>
+            </li>
+
+            <li>
+                <div class="row">
+                  <div class="col-md-2 col-2">
+                    <div class="avatar">
+                      <img src="assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                  </div>
+                  <div class="col-ms-7 col-7">
+                   Amine
+                    
+                  </div>
+                  <div class="col-md-3 col-3 text-right">
+                    <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-md-2 col-2">
+                    <div class="avatar">
+                      <img src="assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                  </div>
+                  <div class="col-ms-7 col-7">
+                   Jaamel
+                    
+                  </div>
+                  <div class="col-md-3 col-3 text-right">
+                    <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="row">
+                  <div class="col-md-2 col-2">
+                    <div class="avatar">
+                      <img src="assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                  </div>
+                  <div class="col-md-7 col-7">
+                      Oumaima
+                  </div>
+                  <div class="col-md-3 col-3 text-right">
+                    <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></button>
+                  </div>
+                </div>
+              </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+
+  </div>
+  
+  <div class="row" *ngIf="!this.receivedData">
+   
+
+    <div class="alert alert-danger">
+
+   <h4>
+        <i class="nc-icon nc-alert-circle-i"></i>
+         <span data-notify="message"><b>  Back to Page: Esprit - Liste Des Offres Professionnels to reload data</b></span>    </h4>
+      </div>
+
+       
+  </div>
+
